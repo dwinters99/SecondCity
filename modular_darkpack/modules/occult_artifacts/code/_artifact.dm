@@ -34,6 +34,8 @@
 	var/rank = 1
 	var/can_be_identified_without_ritual = TRUE
 
+	var/magic_type
+
 	var/grant_sound // = 'sound/effects/magic/swap.ogg'
 	var/ungrant_sound // = 'sound/effects/magic/teleport_diss.ogg'
 
@@ -65,6 +67,12 @@
 		return
 	if(!can_be_used_by(user))
 		return
+	if(!CONFIG_GET(flag/artifact_stacking))
+		var/list/artifacts = user.get_all_contents_type(type)
+		for(var/obj/item/occult_artifact/other_artifact in artifacts)
+			if(other_artifact.owner == user) // We already have a trinket bound. Please dont stack.
+				to_chat(user, span_danger("This excess copy of an artifact is made inert by the same resonances of the current copies held."))
+				return
 	owner = user
 
 	var/datum/controller/subsystem/processing/subsystem = locate(subsystem_type) in Master.subsystems
