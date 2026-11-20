@@ -1,0 +1,8 @@
+smiling
+frowning
+scowling
+laughing
+staring
+crying
+screaming
+overjoyed

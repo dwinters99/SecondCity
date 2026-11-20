@@ -1,0 +1,14 @@
+dead
+dying
+injured
+sleeping
+standing
+sitting
+crazy
+young
+old
+[gore]-covered
+filthy
+[apparel]-wearing
+[weapon]-wielding
+[vegetable]-eating

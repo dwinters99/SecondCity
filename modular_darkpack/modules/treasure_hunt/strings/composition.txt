@@ -1,0 +1,10 @@
+triangular
+rectangular
+square
+unbalanced
+well-balanced
+dynamic
+static
+vertical
+horizontal
+focused

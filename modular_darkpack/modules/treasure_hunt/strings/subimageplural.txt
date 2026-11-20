@@ -1,0 +1,3 @@
+[quantity_adjphrase] [character]s
+[quantity_adjphrase] [vegetable]s
+[quantity_adjphrase] [shape]s

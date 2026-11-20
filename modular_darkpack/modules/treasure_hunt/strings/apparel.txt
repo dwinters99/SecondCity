@@ -1,0 +1,22 @@
+﻿shirt
+button-down shirt
+formal shirt
+jacket
+raincoat
+formal suit
+evening gown
+parka
+duster
+bow tie
+necktie
+belt
+jock strap
+hat
+bowler hat
+baseball cap
+tuque
+top hat
+shoe
+boot
+sandal
+

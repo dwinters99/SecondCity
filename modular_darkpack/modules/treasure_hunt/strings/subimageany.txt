@@ -1,0 +1,2 @@
+[subimagesingle]
+[subimageplural]

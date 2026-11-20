@@ -1,0 +1,9 @@
+triangle
+square
+rectangle
+cone
+line
+heart
+star
+circle
+ellipse

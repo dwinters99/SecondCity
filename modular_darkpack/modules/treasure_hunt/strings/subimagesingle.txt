@@ -1,0 +1,6 @@
+a [character]
+a [terrainfeature]
+a [community]
+a [treetype] tree
+a [vegetable]
+a [animalgroup] of [animal]s

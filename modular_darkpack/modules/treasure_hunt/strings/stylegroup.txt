@@ -1,0 +1,5 @@
+
+[artextra_clause]. [style_clause].
+[style_clause]. [artconjunction] [artextra_clause].
+[style_clause].
+[artextra_clause].
