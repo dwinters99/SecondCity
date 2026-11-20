@@ -65,9 +65,7 @@ GLOBAL_LIST_INIT(treasure_strings, populate_treasure_strings())
 	return sentence_capitalize(capitalize(string))
 
 /proc/sentence_capitalize(input)
-	var/regex/first_letter = new("(?:^|\[.!?\]\\s*)(\\w+)")
-	return replacetext(input, first_letter, /proc/capitalize)
-
+	return replacetext(input, regex(@"(?:^|[.!?]\s*)(\w+)"), /proc/capitalize)
 
 #warn test verb in here
 /client/verb/font_test()
