@@ -1,0 +1,22 @@
+a solitary [character] [descpawn]
+a solitary [character] [descpawn] near a [terrainfeature]
+a solitary [character] [descpawn] near a [community]
+a [character] [descpawn] surrounded by [character]s
+[character]s playing [game]
+a [character] [descpawn] playing [game] with [quantity_adjphrase] [character]s
+a [character] [descpawn] holding a [weapon]
+a [character] [descpawn] eating a [vegetable]
+[quantity_adjphrase] [personjob]s and [personjob]s eating [vegetable]s together
+a [character] wearing a [apparel] [descpawn]
+a [community]
+a [terrainfeature]
+a [weapon]
+a [treetype] tree
+a [naturalobject]
+[quantity_adjphrase] [weapon]s
+[quantity_adjphrase] [vegetable]s
+an empty [apparel]
+a [shape]
+a [shape] surrounded by [shape]s
+an abstracted rendering of [conceptany]
+a [adjany] abstract shape

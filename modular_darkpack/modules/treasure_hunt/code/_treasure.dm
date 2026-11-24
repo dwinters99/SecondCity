@@ -1,76 +1,27 @@
-GLOBAL_LIST_INIT(treasure_strings, populate_treasure_strings())
+// Most common drop, we fall back to this if we fail to roll a real reward on the drop table (i.e. an artifact or fetish)
+/obj/item/treasure
+	name = "debug treasure"
+	desc = "Yarrrrr. If ye' be seein' this, anchor yerself at port an' fill th' ears of a code monkey with yer tale!"
+	icon_state = null
+	icon = 'icons/obj/maintenance_loot.dmi'
+	#warn icon not def
+	var/generate_treasure_name = TRUE
+	var/generate_treasure_description = TRUE
+	var/treasure_color
+	var/list/possible_treasure_colors = list()
+	var/list/possible_icon_states = list("skub")
 
-/proc/populate_treasure_strings()
-	var/list/all_strings = list()
-	var/list/str_lists = list(
-		"animal",
-		"animalgroup",
-		"apparel",
-		"artconjunction",
-		"artextra_clause",
-		"artstyle_adj",
-		"character",
-		"color",
-		"community",
-		"composition",
-		"concept_angsty",
-		"concept_badass",
-		"concept_positive",
-		"conceptany",
-		"depiction",
-		"depicts",
-		"emotional_expression",
-		"enemy",
-		"gore",
-		"idles",
-		"pawn_adj",
-		"personjob",
-		"quantity_adjphrase",
-		"shape",
-		"side_position",
-		"style_clause",
-		"stylegroup",
-		"subimageany",
-		"subimageplural",
-		"subimagesingle",
-		"symbolizes",
-		"terrainfeature",
-		"treetype",
-		"vegetable",
-		"weapon",)
+/obj/item/treasure/Initialize(mapload)
+	. = ..()
+	if(generate_treasure_name)
+		name = generate_treasure_name()
 
-	for(var/string_list in str_lists)
-		all_strings[string_list] = world.file2list("modular_darkpack/modules/treasure_hunt/strings/[string_list].txt")
+	if(generate_treasure_description)
+		desc = compose_treasure_description(src)
 
-	return all_strings
+	if(isnull(icon_state))
+		icon_state = pick(possible_icon_states)
 
-/proc/compose_treasure_description()
-	var/string = pick(GLOB.treasure_strings["stylegroup"])
+	color = treasure_color || pick(possible_treasure_colors)
 
-	for(var/i = 0 to 50)
-		var/bracket_index = findtext(string, "\[")
-		if(!bracket_index)
-			break
-		var/end_bracket_index = findtext(string, "\]", bracket_index)
-
-		var/capture_group = copytext(string, bracket_index+1, end_bracket_index)
-
-		var/string_decided = pick(GLOB.treasure_strings[capture_group])
-		if(!istext(string_decided))
-			CRASH("Our decided string isn't a string!")
-
-		string = replacetext(string, "\[[capture_group]\]", string_decided)
-
-
-	return sentence_capitalize(capitalize(string))
-
-/proc/sentence_capitalize(input)
-	return replacetext(input, regex(@"(?:^|[.!?]\s*)(\w+)"), /proc/capitalize)
-
-#warn test verb in here
-/client/verb/font_test()
-	set category = "ZZZZZZZdebug"
-	set name = "treasure desc"
-	set desc = "See all of your achievements!"
-
-	to_chat(src, "[compose_treasure_description()]")
+///obj/item/treasure

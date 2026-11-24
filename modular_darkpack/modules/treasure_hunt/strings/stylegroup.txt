@@ -1,5 +1,5 @@
 
-[artextra_clause]. [style_clause].
-[style_clause]. [artconjunction] [artextra_clause].
-[style_clause].
-[artextra_clause].
+[physicaldescriptionroot]. [artextra_clause]. [style_clause].
+[physicaldescriptionroot]. [style_clause]. [artconjunction] [artextra_clause].
+[physicaldescriptionroot]. [style_clause].
+[physicaldescriptionroot]. [artextra_clause].

@@ -1,0 +1,6 @@
+[quantity_adjphrase] [ally]s watch the preparations
+[quantity_adjphrase] [ally]s help with the preparations
+[quantity_adjphrase] [enemy]s shrink away from the scene
+a [terrainfeature] is visible in the distance
+[quantity_adjphrase] [personjob]s watch from a distance
+[quantity_adjphrase] [animal]s wander peacefully
